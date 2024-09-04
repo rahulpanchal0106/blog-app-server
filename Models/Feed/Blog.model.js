@@ -14,6 +14,8 @@ const schema = mongoose.Schema({
         required:true,
         ref:'Users'
     }
+},{
+    timestamps:true
 })
 
 const model = mongoose.model('Blogs',schema)
