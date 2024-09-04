@@ -5,6 +5,7 @@ const createBlog = require('./Controllers/Feed/create.controller')
 const auth = require('./Middlewares/auth');
 const cors = require('cors');
 const getFeed = require('./Controllers/Feed/getFeed.controller');
+const deleteBlog = require('./Controllers/Feed/delete.controller');
 const app = express();
 
 app.use(express.json())
@@ -13,7 +14,8 @@ app.use(cors())
 app.post('/signup',signup)
 app.post('/login',login)
 app.post('/create',auth,createBlog)
-app.get('/feed',getFeed)
+app.get('/feed',auth,getFeed)
+app.delete('/feed/:blogId',auth,deleteBlog)
 
 
 app.get("/",(req,res)=>{
