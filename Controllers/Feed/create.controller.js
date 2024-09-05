@@ -15,6 +15,7 @@ const create = async (req,res)=>{
         }
         await blogModel.create(blog);
         res.status(201).json({message:"Blog published!"})
+        console.log(`${username} published a blog`)
 
     }catch(e){
         console.error("Error creating blog: ",e.message)

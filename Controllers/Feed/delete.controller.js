@@ -17,8 +17,10 @@ const deleteBlog = async (req,res)=>{
     
         if(author.username === req.user.username){
             await blogsModel.findByIdAndDelete(blogId);
+            console.log(`${blogId} has been deleted`)
             return res.status(200).json({message:"Blog deleted successfully"})
         }
+        return res.status(401).json({message:"Cannot delete someone else's blog"})
     }catch(e){
         console.log("error deleting blog: ",e.message);
         res.status(500).json({message:"Error Deleting the Blog"})

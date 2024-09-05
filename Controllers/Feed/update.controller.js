@@ -23,7 +23,7 @@ const updateBlog = async (req,res) => {
             blog.content = content || blog.content;
     
             await blog.save()
-    
+            console.log(`${username} updated the blog ${blogId}`)
             return res.status(200).json({message:"Blog updated sucessfully"})
         }else{
             return res.status(401).json({message:"You are not authorized to update this blog"})

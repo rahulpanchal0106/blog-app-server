@@ -4,6 +4,7 @@ const signup = async (req,res)=>{
     console.log(name)
     try{
         await model.create({name:name,username:username,password:password});
+        console.log(`${username} signed up`)
         res.status(201).json({message:"Signup Successfull"});
     }catch(e){
         console.error("Error signin up... ",e.message)
