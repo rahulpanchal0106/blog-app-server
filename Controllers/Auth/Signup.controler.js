@@ -7,7 +7,10 @@ const signup = async (req,res)=>{
         res.status(201).json({message:"Signup Successfull"});
     }catch(e){
         console.error("Error signin up... ",e.message)
-        res.statsu(500).json({message:"Internal Server Error"});
+        if(e.code === 11000){
+            return res.status(400).json({message:"User Already Exists"});
+        }
+        return res.status(500).json({message:"Internal Server Error"});
     }
 }
 
