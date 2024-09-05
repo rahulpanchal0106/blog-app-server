@@ -10,9 +10,8 @@ const schema = mongoose.Schema({
         required: true
     },
     author:{
-        type:mongoose.Schema.ObjectId,
-        required:true,
-        ref:'Users'
+        type: Object,
+        required:true
     }
 },{
     timestamps:true

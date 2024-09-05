@@ -11,7 +11,7 @@ const create = async (req,res)=>{
         const blog = {
             title: title,
             content: content,
-            author: user._id
+            author: user
         }
         await blogModel.create(blog);
         res.status(201).json({message:"Blog published!"})
