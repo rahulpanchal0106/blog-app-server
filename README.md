@@ -9,4 +9,4 @@
   PORT=3000
   JWT_SECRET="ilovecats!"
   ```
-- Start the server ``` npm run start ``` and now set up the [front-end](https://github.com/rahulpanchal0106/blog-app-client/edit/main/README.md) local server
+- Start the server ``` npm run start ``` and now set up the [front-end](https://github.com/rahulpanchal0106/blog-app-server/blob/main/README.md) local server
